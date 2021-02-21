@@ -1,0 +1,18 @@
+<div>
+  <label>Select Product</label>
+  <select [(ngModel)]="selectedProductId">
+    <option *ngFor="let p of productList" [value]="p.id">
+      {{p.name}}
+    </option>
+  </select>
+  <label>Units</label>
+  <input type="number" [(ngModel)]="quantity">
+</div>
+<br>
+<div>
+  <button (click)="getCalculatedPrice()">Get Price</button>
+</div>
+<br>
+<div>
+  <h2>{{price | currency:'LKR'}}</h2>
+</div>
